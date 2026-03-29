@@ -1,0 +1,44 @@
+body.yt-full-browser {
+  overflow-y: hidden !important;
+}
+
+body.yt-full-browser #masthead-container {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.yt-full-browser ytd-watch-flexy #columns,
+body.yt-full-browser ytd-watch-flexy #secondary,
+body.yt-full-browser ytd-watch-flexy #related {
+  display: none !important;
+}
+
+body.yt-full-browser ytd-watch-flexy #primary,
+body.yt-full-browser ytd-watch-flexy #primary-inner {
+  padding: 0 !important;
+}
+
+body.yt-full-browser #movie_player {
+  width: 100% !important;
+  height: 100vh !important;
+}
+
+body.yt-full-browser ytd-watch-flexy #player,
+body.yt-full-browser ytd-watch-flexy #player-container-outer {
+  height: 100vh !important;
+  max-height: 100vh !important;
+}
+
+body.yt-full-browser ytd-watch-flexy {
+  --ytd-watch-flexy-sidebar-width: 0px !important;
+}
+
+body.yt-full-browser ytd-watch-flexy[full-bleed-player] {
+  --ytd-watch-flexy-player-height: 100vh !important;
+  --ytd-watch-flexy-player-width: 100vw !important;
+}
+
+body.yt-full-browser ytd-page-manager,
+body.yt-full-browser ytd-watch-flexy {
+  margin-top: 0 !important;
+}
