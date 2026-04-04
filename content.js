@@ -9,6 +9,28 @@
     return path.startsWith("/watch") || path.includes("/live/");
   }
 
+  function clearPlayerSizingStyles() {
+    var player = document.querySelector("#movie_player");
+    if (!player) return;
+
+    var videos = player.querySelectorAll("video.html5-main-video, video.video-stream, video");
+
+    for (var i = 0; i < videos.length; i++) {
+      videos[i].style.removeProperty("width");
+      videos[i].style.removeProperty("height");
+      videos[i].style.removeProperty("left");
+      videos[i].style.removeProperty("top");
+    }
+  }
+
+  function resetPlayerSizingAfterFullBrowserExit() {
+    clearPlayerSizingStyles();
+
+    requestAnimationFrame(function () {
+      window.dispatchEvent(new Event("resize"));
+    });
+  }
+
   function enterFullBrowser() {
     if (active || disabled) return;
 
@@ -30,6 +52,7 @@
     if (!active) return;
     document.body.classList.remove("yt-full-browser");
     active = false;
+    resetPlayerSizingAfterFullBrowserExit();
     if (chatObserver) {
       chatObserver.disconnect();
       chatObserver = null;
@@ -73,8 +96,7 @@
 
       if (!isTheaterOn && active) {
         disabled = true;
-        active = false;
-        document.body.classList.remove("yt-full-browser");
+        leaveFullBrowser();
         return;
       }
 
