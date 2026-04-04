@@ -1,5 +1,6 @@
 body.yt-full-browser {
   overflow-y: hidden !important;
+  background-color: #000 !important;
 }
 
 body.yt-full-browser #masthead-container {
