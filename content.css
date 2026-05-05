@@ -3,6 +3,17 @@ body.yt-full-browser {
   background-color: #000 !important;
 }
 
+html:has(body.yt-full-browser),
+body.yt-full-browser ytd-app,
+body.yt-full-browser ytd-page-manager,
+body.yt-full-browser ytd-watch-flexy,
+body.yt-full-browser ytd-watch-flexy #primary,
+body.yt-full-browser ytd-watch-flexy #primary-inner,
+body.yt-full-browser ytd-watch-flexy #player,
+body.yt-full-browser ytd-watch-flexy #player-container-outer {
+  background-color: #000 !important;
+}
+
 body.yt-full-browser #masthead-container {
   opacity: 0 !important;
   pointer-events: none !important;
